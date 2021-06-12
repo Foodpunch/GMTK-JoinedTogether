@@ -7,10 +7,12 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D _rb;
     public SpriteRenderer _sr;
     public float moveMultiplier =5f;
+    public static PlayerScript instance;
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();    
+        _rb = GetComponent<Rigidbody2D>();
+        instance = this;
     }
 
     // Update is called once per frame
