@@ -6,7 +6,8 @@ public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D _rb;
     public SpriteRenderer _sr;
-    public float moveMultiplier =5f;
+    public float moveSpeed =5f;
+    public float movespeedMult = 1f;
     public static PlayerScript instance;
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,8 @@ public class PlayerScript : MonoBehaviour
     }
     void MovementInput()
     {
-        float x = Input.GetAxis("Horizontal")*moveMultiplier;
-        float y = Input.GetAxis("Vertical")*moveMultiplier;
+        float x = Input.GetAxis("Horizontal")*moveSpeed*movespeedMult;
+        float y = Input.GetAxis("Vertical")*moveSpeed*movespeedMult;
         _rb.velocity = new Vector2(x, y);
     }
     void SetSpriteDirection() //Smooth this later!
