@@ -6,8 +6,10 @@ public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D _rb;
     public SpriteRenderer _sr;
+    public Sprite[] Sprites;
     public float moveSpeed =5f;
     public float movespeedMult = 1f;
+    public float playerRadius;
     public static PlayerScript instance;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,17 @@ public class PlayerScript : MonoBehaviour
     }
     void SetSpriteDirection() //Smooth this later!
     {
-        _sr.gameObject.transform.up = _rb.velocity;
+        if (_rb.velocity.x > 0)
+        {
+            _sr.sprite = Sprites[1];
+        }
+        else if (_rb.velocity.x < 0)
+        {
+            _sr.sprite = Sprites[2];
+        }
+        else
+            _sr.sprite = Sprites[0];
+
+        _sr.transform.up = Vector2.Lerp(_sr.transform.up, _rb.velocity,.05f);
     }
 }

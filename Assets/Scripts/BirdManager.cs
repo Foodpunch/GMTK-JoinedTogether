@@ -12,7 +12,6 @@ public class BirdManager : MonoBehaviour
     public List<BirdObject> birdList = new List<BirdObject>();
 
     public int birdCount = 5;
-    float birdDensity = 0.08f;
 
     public float driveFactor = 10f;
     public float maxSpeed = 5f;
@@ -31,10 +30,12 @@ public class BirdManager : MonoBehaviour
     Vector2 currVelocity;
     public float birdSmoothTime = .5f;
 
-    public float radius = 50f;
+    float radius = 3f;
+    public float flockRadius = 3f;
 
     public bool trackPlayer = false;
-
+    int playerBirdCount;
+    Collider2D _col;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,15 +45,26 @@ public class BirdManager : MonoBehaviour
 
         for(int i =0; i< birdCount; i++)
         {
-            BirdObject birb = Instantiate(birdPrefab, Random.insideUnitCircle * birdCount * birdDensity, Quaternion.Euler(Vector3.forward * Random.Range(0, 360)),transform);
+            BirdObject birb = Instantiate(birdPrefab, (Vector2)transform.position+Random.insideUnitCircle, Quaternion.Euler(Vector3.forward * Random.Range(0, 360)),transform);
             birb.name = "Bird " + i;
             birdList.Add(birb);
         }
+
+        _col = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(trackPlayer)
+        {
+            Debug.Log(playerBirdCount);
+            radius = playerBirdCount * 0.5f;
+        }
+        else
+        {
+            radius = birdCount * 0.5f;
+        }
         foreach(BirdObject bird in birdList)
         {
             List<Transform> context = GetNeighbors(bird);
@@ -72,7 +84,9 @@ public class BirdManager : MonoBehaviour
             steer *= driveFactor;
             if (steer.sqrMagnitude > sqMaxSpeed)
             {
-                steer = steer.normalized * maxSpeed * PlayerScript.instance.movespeedMult;
+                if (trackPlayer)
+                    steer = steer.normalized * maxSpeed * PlayerScript.instance.movespeedMult;
+                else steer = steer.normalized * maxSpeed;
             }
             bird.Move(steer);
         }
@@ -192,6 +206,17 @@ public class BirdManager : MonoBehaviour
         //Gizmos.DrawSphere(PlayerScript.instance.transform.position, radius);
         if(PlayerScript.instance != null)
             Gizmos.DrawWireSphere(PlayerScript.instance.transform.position, radius);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag =="Player")
+        {
+            _col.enabled = false;
+            trackPlayer = true;
+            playerBirdCount += birdCount;
+            CameraManager.instance.cam.orthographicSize += (0.1f*birdCount);
+        }
+
     }
 
 }
