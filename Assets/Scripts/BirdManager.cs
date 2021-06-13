@@ -30,12 +30,13 @@ public class BirdManager : MonoBehaviour
     Vector2 currVelocity;
     public float birdSmoothTime = .5f;
 
-    float radius = 3f;
+    public float radius = 3f;
     public float flockRadius = 3f;
 
     public bool trackPlayer = false;
-    int playerBirdCount;
     Collider2D _col;
+
+    public AnimationCurve testCurve;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,12 +59,13 @@ public class BirdManager : MonoBehaviour
     {
         if(trackPlayer)
         {
-            Debug.Log(playerBirdCount);
-            radius = playerBirdCount * 0.5f;
+            if(PlayerScript.instance.playerBirdManager.birdList.Count >0)
+           radius = PlayerScript.instance.playerBirdManager.birdList.Count * 0.15f;
+            if (radius > 11) radius = 11;
         }
         else
         {
-            radius = birdCount * 0.5f;
+            radius =  0.55f * testCurve.Evaluate(birdCount);
         }
         foreach(BirdObject bird in birdList)
         {
@@ -204,8 +206,16 @@ public class BirdManager : MonoBehaviour
     public void OnDrawGizmos()
     {
         //Gizmos.DrawSphere(PlayerScript.instance.transform.position, radius);
-        if(PlayerScript.instance != null)
-            Gizmos.DrawWireSphere(PlayerScript.instance.transform.position, radius);
+        if(trackPlayer)
+        {
+            if (PlayerScript.instance != null)
+                Gizmos.DrawWireSphere(PlayerScript.instance.transform.position, radius);
+        }
+        else
+        {
+            Gizmos.DrawWireSphere(transform.position, radius);
+        }
+   
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -213,10 +223,19 @@ public class BirdManager : MonoBehaviour
         {
             _col.enabled = false;
             trackPlayer = true;
-            playerBirdCount += birdCount;
-            CameraManager.instance.cam.orthographicSize += (0.1f*birdCount);
+            BirdManager playerBirdManager = collision.gameObject.GetComponent<BirdManager>();
+            AddBirdsToList(playerBirdManager);
+            //PlayerScript.instance.playerBirdCount += birdCount;
+          
         }
 
+    }
+    public void AddBirdsToList(BirdManager birdsToTransferTo)
+    {
+        for(int i =0; i<birdList.Count; i++)
+        {
+            birdsToTransferTo.birdList.Add(birdList[i]);
+        }
     }
 
 }

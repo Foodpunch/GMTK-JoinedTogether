@@ -9,9 +9,9 @@ public class BirdObject : MonoBehaviour
     Rigidbody2D _rb;
     Collider2D _col;
     public Collider2D BirdCollider { get { return _col; } }
+    public GameObject explosion;
 
 
-    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -24,5 +24,11 @@ public class BirdObject : MonoBehaviour
         transform.up = velocity;
         transform.position += (Vector3)velocity * Time.deltaTime;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameObject.SetActive(false);
+        Instantiate(explosion, transform.position, transform.rotation);
+        CameraManager.instance.Shake(0.15f);
+        //gameObject.transform.GetComponentInParent<BirdManager>().
+    }
 }

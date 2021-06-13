@@ -9,12 +9,14 @@ public class PlayerScript : MonoBehaviour
     public Sprite[] Sprites;
     public float moveSpeed =5f;
     public float movespeedMult = 1f;
-    public float playerRadius;
+    //public int playerBirdCount;
+    public BirdManager playerBirdManager;
     public static PlayerScript instance;
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        playerBirdManager = GetComponent<BirdManager>();
         instance = this;
     }
 
@@ -22,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         MovementInput();
-        SetSpriteDirection();
+       // SetSpriteDirection();
     }
     void MovementInput()
     {
