@@ -11,7 +11,7 @@ public class BirdObject : MonoBehaviour
     public Collider2D BirdCollider { get { return _col; } }
     public GameObject explosion;
 
-
+    float t;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -23,6 +23,10 @@ public class BirdObject : MonoBehaviour
     {
         transform.up = velocity;
         transform.position += (Vector3)velocity * Time.deltaTime;
+        if(t<Time.time)
+        {
+            t = Time.time + Random.Range(3f, 8f);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

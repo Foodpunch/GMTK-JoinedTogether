@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2692080778084951421}
   - component: {fileID: 2692080778084951394}
   - component: {fileID: 2692080778084951420}
+  - component: {fileID: 216293458}
   m_Layer: 0
   m_Name: Flock
   m_TagString: Untagged
@@ -101,3 +102,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &216293458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692080778084951395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f82c08488dfb984596eec8aa4ad9852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IndicatorPrefab: {fileID: 7133777889151051636, guid: 07c01aee61fdf12408d77e0cfa518ea5,
+    type: 3}
+  ImageToRotate: {fileID: 0}
+  flockCollected: 0
+  offset: -50
+  indicatorDistance: 20

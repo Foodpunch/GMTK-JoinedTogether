@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: e0e8bc7db2300594f9fcdedad1ccaf33
+guid: 2cdc13ecd2148f9419ef291a37ff89db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8020143640844766479
-    second: spritesheet_0
+      213: -1121174404958841514
+    second: spritesheet tern_0
   - first:
-      213: -6251682230944352461
-    second: spritesheet_1
+      213: 7032704831839983916
+    second: spritesheet tern_1
   - first:
-      213: -1259408508766424310
-    second: spritesheet_3
+      213: 6116184225795346722
+    second: spritesheet tern_4
   - first:
-      213: -5962389079421231736
-    second: spritesheet_2
+      213: 3863755094215178851
+    second: spritesheet tern_2
   - first:
-      213: 2788568348960109317
-    second: spritesheet_3
+      213: 4644784836078070795
+    second: spritesheet tern_3
   - first:
-      213: 226702753830753226
-    second: spritesheet_5
+      213: 4058734528974861432
+    second: spritesheet tern_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,127 +129,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_0
+      name: spritesheet tern_0
       rect:
         serializedVersion: 2
         x: 0
         y: 260
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.5078125, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d092816264d4f60800000000000000
-      internalID: 8020143640844766479
+      spriteID: 6551b25a1d9c070f0800000000000000
+      internalID: -1121174404958841514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_1
+      name: spritesheet tern_1
       rect:
         serializedVersion: 2
         x: 256
         y: 260
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337b0ff32209d39a0800000000000000
-      internalID: -6251682230944352461
+      spriteID: c29deff98cf299160800000000000000
+      internalID: 7032704831839983916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_4
+      name: spritesheet tern_4
       rect:
         serializedVersion: 2
         x: 512
         y: 260
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.5234375, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a037fd742aea58ee0800000000000000
-      internalID: -1259408508766424310
+      spriteID: 221116ff52d01e450800000000000000
+      internalID: 6116184225795346722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_2
+      name: spritesheet tern_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 4
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.5078125, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ddd6ce8b6514da0800000000000000
-      internalID: -5962389079421231736
+      spriteID: 36a3dc189c0de9530800000000000000
+      internalID: 3863755094215178851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_3
+      name: spritesheet tern_3
       rect:
         serializedVersion: 2
         x: 256
         y: 4
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.515625, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5033aaf832cf2b620800000000000000
-      internalID: 2788568348960109317
+      spriteID: b0ced840337957040800000000000000
+      internalID: 4644784836078070795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_5
+      name: spritesheet tern_5
       rect:
         serializedVersion: 2
         x: 512
         y: 4
         width: 256
         height: 256
-      alignment: 9
-      pivot: {x: 0.5234375, y: 0.4765625}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac35fa714f8652300800000000000000
-      internalID: 226702753830753226
+      spriteID: 874b82dcc85835830800000000000000
+      internalID: 4058734528974861432
       vertices: []
       indices: 
       edges: []
@@ -257,7 +257,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 784106c3eb5d79e4683844b8fd85c446
+    spriteID: 08ae9982846184a43bec91557d6a92fe
     internalID: 0
     vertices: []
     indices: 

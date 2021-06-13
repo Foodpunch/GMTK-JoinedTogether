@@ -62,6 +62,7 @@ public class BirdManager : MonoBehaviour
             if(PlayerScript.instance.playerBirdManager.birdList.Count >0)
            radius = PlayerScript.instance.playerBirdManager.birdList.Count * 0.15f;
             if (radius > 11) radius = 11;
+            if (radius < 3) radius = 2;
         }
         else
         {
@@ -74,7 +75,7 @@ public class BirdManager : MonoBehaviour
             //bird.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.green, context.Count / 6f);
             if(trackPlayer)
             {
-                objToTrack = PlayerScript.instance.gameObject;
+                objToTrack = PlayerScript.instance.obj;
             }
             else
             {
@@ -225,6 +226,11 @@ public class BirdManager : MonoBehaviour
             trackPlayer = true;
             BirdManager playerBirdManager = collision.gameObject.GetComponent<BirdManager>();
             AddBirdsToList(playerBirdManager);
+            if(gameObject.GetComponent<IndicatorScript>()!=null)
+            {
+                gameObject.GetComponent<IndicatorScript>().flockCollected = true;
+            }
+            AudioManager.instance.PlaySound(AudioManager.SoundType.PICKBIRD, transform.position);
             //PlayerScript.instance.playerBirdCount += birdCount;
           
         }

@@ -11,7 +11,9 @@ public class PlayerScript : MonoBehaviour
     public float movespeedMult = 1f;
     //public int playerBirdCount;
     public BirdManager playerBirdManager;
+    public GameObject obj;
     public static PlayerScript instance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,9 @@ public class PlayerScript : MonoBehaviour
         float x = Input.GetAxis("Horizontal")*moveSpeed*movespeedMult;
         float y = Input.GetAxis("Vertical")*moveSpeed*movespeedMult;
         _rb.velocity = new Vector2(x, y);
+        //_rb.velocity = _sr.transform.up * y;
+        float f =Mathf.PerlinNoise(transform.position.x, transform.position.y);
+
     }
     void SetSpriteDirection() //Smooth this later!
     {

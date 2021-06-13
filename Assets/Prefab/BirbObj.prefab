@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6798523910467805580}
   - component: {fileID: 6798523910467805571}
+  - component: {fileID: 8779340669839419295}
   m_Layer: 9
   m_Name: Birb
   m_TagString: Untagged
@@ -155,7 +156,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ac4ad288c2c501d4f8dc9a34d95e1f97, type: 3}
+  m_Sprite: {fileID: -1121174404958841514, guid: 2cdc13ecd2148f9419ef291a37ff89db,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,3 +168,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8779340669839419295
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6798523910467805581}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63cc16c9ff6380243889a9c39fa7b7e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

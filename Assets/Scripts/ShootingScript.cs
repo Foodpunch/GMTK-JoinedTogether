@@ -46,6 +46,7 @@ public class ShootingScript : MonoBehaviour
     }
     void ShootBird()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.SHOOTBIRD, transform.position);
         GameObject bulletClone = Instantiate(BirdBulletPrefab, transform.position, Quaternion.identity);
         bulletClone.GetComponent<Rigidbody2D>().AddForce(transform.up * 15f,ForceMode2D.Impulse);
     }
