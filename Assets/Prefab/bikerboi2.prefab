@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 9057700170760556952}
   - component: {fileID: 9057700170760556953}
   - component: {fileID: 9057700170760556954}
+  - component: {fileID: 4645806192100666172}
   m_Layer: 10
   m_Name: bikerboi2
   m_TagString: Untagged
@@ -344,6 +345,7 @@ MonoBehaviour:
   stoppingDistance: 18
   explosion: {fileID: 309677995653323089, guid: 425ea632d07f4284084e53a710cef159,
     type: 3}
+  cage: {fileID: 0}
 --- !u!50 &9057700170760556953
 Rigidbody2D:
   serializedVersion: 4
@@ -381,3 +383,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.76, y: 2.0317461}
   m_Direction: 0
+--- !u!114 &4645806192100666172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057700170760560228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc2ac779a0792a4fb32f19fa8503e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 6281409030800629220, guid: 0355e15c162cbc644955b93e47c74294, type: 3}

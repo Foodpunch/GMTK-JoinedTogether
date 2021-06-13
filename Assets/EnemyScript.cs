@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
     SpriteRenderer _sr;
     Vector2 desiredDir;
     public GameObject explosion;
+    public GameObject cage;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,12 +52,24 @@ public class EnemyScript : MonoBehaviour
             if(health <=1)
             {
                 //Die
-                gameObject.SetActive(false);
-                Instantiate(explosion, transform.position, Quaternion.identity);
-                AudioManager.instance.PlaySound(AudioManager.SoundType.ENEMYDIE, transform.position);
+                Die();
             }
             health--;
             //player hurt sound here
+        }
+        if(collision.collider.tag == "Obstacle")
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        gameObject.SetActive(false);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        AudioManager.instance.PlaySound(AudioManager.SoundType.ENEMYDIE, transform.position);
+        if(cage != null)
+        {
+            cage.GetComponent<Cage>().CageBreak();
         }
     }
     public float Map(float value, float from, float to, float from2, float to2)

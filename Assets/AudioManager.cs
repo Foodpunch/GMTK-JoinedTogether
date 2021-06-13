@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
         SHOOTBIRD,
         PICKBIRD,
         BIRDCAGE,
+        CAGEBREAK,
 
 
     }
